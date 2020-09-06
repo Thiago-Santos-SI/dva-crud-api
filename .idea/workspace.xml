@@ -1,22 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="25776437-dcd9-4d3f-acdf-1562e7d290ef" name="Default Changelist" comment="" />
+    <list default="true" id="25776437-dcd9-4d3f-acdf-1562e7d290ef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/api/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/ace" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/app/Controllers/Http/PostController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/app/Middleware/ConvertEmptyStringsToNull.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/app/Models/Post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/app/Models/Token.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/app/Models/Traits/NoTimestamp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/app/Models/User.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/config/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/config/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/config/bodyParser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/config/cors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/config/database.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/config/hash.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/database/factory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/database/migrations/1503250034279_user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/database/migrations/1503250034280_token.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/database/migrations/1599211065900_post_schema.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/start/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/start/kernel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/api/start/routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/Components/postitems.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/Components/posts/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/models/postsAPI.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/services/apiPosts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.eslintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.roadhogrc.mock.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.roadhogrc.mock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/.webpackrc" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.webpackrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/mock/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/mock/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Components/Example.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Components/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Components/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Components/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/Components/postitems.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/assets/yay.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/yay.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/models/example.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/models/example.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/models/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/models/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/routes/IndexPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/IndexPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/routes/IndexPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/IndexPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/routes/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/services/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/services/example.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/example.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/request.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1h12xUYX6YlUBS2fshGuBERYcz6" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -27,10 +110,71 @@
       <option name="presentableId" value="Default" />
       <updated>1599164523868</updated>
       <workItem from="1599164525129" duration="656000" />
+      <workItem from="1599210242560" duration="5619000" />
+      <workItem from="1599223458152" duration="418000" />
     </task>
+    <task id="LOCAL-00001" summary="api crud">
+      <created>1599210327435</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1599210327435</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="api crud" />
+    <option name="LAST_COMMIT_MESSAGE" value="api crud" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="78" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599211892531">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="78" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1044@0.0.1920.1044" timestamp="1599211892531" />
+    <state x="746" y="273" key="FileChooserDialogImpl" timestamp="1599223874080">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="746" y="273" key="FileChooserDialogImpl/0.0.1920.1044@0.0.1920.1044" timestamp="1599223874080" />
+    <state width="616" height="269" key="GridCell.Tab.0.bottom" timestamp="1599211969615">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="616" height="269" key="GridCell.Tab.0.bottom/0.0.1920.1044@0.0.1920.1044" timestamp="1599211969615" />
+    <state width="616" height="269" key="GridCell.Tab.0.center" timestamp="1599211969615">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="616" height="269" key="GridCell.Tab.0.center/0.0.1920.1044@0.0.1920.1044" timestamp="1599211969615" />
+    <state width="616" height="269" key="GridCell.Tab.0.left" timestamp="1599211969614">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="616" height="269" key="GridCell.Tab.0.left/0.0.1920.1044@0.0.1920.1044" timestamp="1599211969614" />
+    <state width="616" height="269" key="GridCell.Tab.0.right" timestamp="1599211969615">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="616" height="269" key="GridCell.Tab.0.right/0.0.1920.1044@0.0.1920.1044" timestamp="1599211969615" />
+    <state width="296" height="500" key="HiddenNamespacesPopup" timestamp="1599211991999">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state width="296" height="500" key="HiddenNamespacesPopup/0.0.1920.1044@0.0.1920.1044" timestamp="1599211991999" />
+    <state x="554" y="254" width="804" height="548" key="Vcs.Push.Dialog.v2" timestamp="1599210365917">
+      <screen x="0" y="0" width="1920" height="1044" />
+    </state>
+    <state x="554" y="254" width="804" height="548" key="Vcs.Push.Dialog.v2/0.0.1920.1044@0.0.1920.1044" timestamp="1599210365917" />
   </component>
 </project>
