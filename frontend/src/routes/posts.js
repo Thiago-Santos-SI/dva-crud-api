@@ -1,16 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "dva";
-import { Link } from 'react-router-dom';
+import {Link} from "dva/router";
 import 'antd/dist/antd.css';
 import {Button,Table} from 'antd';
 
 class posts extends Component {
 
   handleDelete = (value) => {
-    this.props.dispatch({
-          type:"posts/deleteItem",
-          payload:value
-    });
+    this.props.dispatch({type:"posts/deleteItem",payload:value});
   }
 
   buttonStyle = {
@@ -37,18 +34,9 @@ class posts extends Component {
       title:'Edit',
       key:'edit',
       //Input params are the dataSource
-      render:({ id, userId, title }) => (
+      render:({id,userId,title})=>(
         <span>
-          <Link to={{
-            pathname: '/edit',
-            state: {
-              item: {
-                id,
-                userId,
-                title
-              }
-            }
-          }}>
+          <Link to={{pathname: '/edit',state: {item: {id,userId,title}}}}>
           <Button type="primary">Edit</Button>
           </Link>
         </span>
@@ -58,25 +46,24 @@ class posts extends Component {
       title:'Delete',
       key:'delete',
       //Input params are the dataSource
-      render:({ id })=>(
-        <Button type="danger" onClick={() => this.handleDelete(id)}>Delete</Button>
+      render:({id})=>(
+        <Button type="danger" onClick={()=>this.handleDelete(id)}>Delete</Button>
       )
     }
   ];
 
   render() {
-
-    const { getDataState } = this.props;
-
+    const {getDataState:data} = this.props;
+    console.log(data)
     return (
       <React.Fragment>
-        <h1 style={this.postStyle}>Posts {getDataState.length}</h1>
+        <h1 style={this.postStyle}>Posts {data.length}</h1>
         <Link to="/create">
-        <Button type="primary" style={this.buttonStyle}>Create</Button>
+          <Button type="primary" style={this.buttonStyle}>Create</Button>
         </Link>
         <div>
-          {console.log(getDataState)}
-          {(getDataState) && <Table columns={this.columns} dataSource=""/>}
+          {console.log(data)}
+          {(data) && <Table columns={this.columns} dataSource={data} rowKey='id'></Table>}
         </div>
       </React.Fragment>
     );
@@ -86,9 +73,13 @@ class posts extends Component {
 const mapStateToProps = state => {
   return {
     getItems: state.posts.getItems,
+
+    getItemsAPI: state.posts.getItemsAPI,
+
     deleteItem: state.posts.deleteItem,
-    getDataState:state.posts.items,
+    getDataState: state.posts.items,
     loggingState:state.posts.logging
+
   };
 };
 

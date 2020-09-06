@@ -1,4 +1,4 @@
-import { fetchItems,deleteItem,createItem,editItem } from "../services/api";
+import {fetchItems, deleteItem, createItem, editItem, fetchItemsAPI} from "../services/api";
 import {routerRedux} from "dva/router";
 import pathToRegExp from 'path-to-regexp';
 export default {
@@ -55,12 +55,22 @@ export default {
   },
 
   effects: {
-    //ESSE EFEITO SERVE APENAS PARA CHAMAR E METODO  SAVE E A SALVAR OS DADOS DA API NO ESTADO DE ARRAY (items[])
+    //ESSE EFEITO SERVE APENAS PARA CHAMAR O METODO SAVE E SALVAR OS DADOS DA API NO ESTADO DE ARRAY (items[])
     *getItems(action, { call, put }) {
       const items = yield call(fetchItems);
+      console.log(items)
       yield put({
         type: "saveItems",
         payload: items.data
+      });
+    },
+
+    *getItemsAPI(action, { call, put }) {
+      const items = yield call(fetchItemsAPI);
+      console.log(items)
+      yield put({
+        type: "saveItems",
+        payload: items
       });
     },
 
@@ -103,6 +113,8 @@ export default {
   },
 
   //every time it visits executions starts from history.listem acting as listener function.
+
+  //Alteração do histórico de inscrição (url), aciona a ação `load` se o nome do caminho for` / `
   subscriptions: {
     setup: function ({ history, dispatch }) {
       let locate = false;
@@ -110,7 +122,7 @@ export default {
             if (pathToRegExp('/').exec(location.pathname)) {
               if(!locate){
                 dispatch({
-                  type: 'getItems',
+                  type: 'getItemsAPI',
               });
               locate =true;
               }

@@ -7,7 +7,8 @@ export const createItem = ({ title, body }) => {
   })
 }
 
-export const fetchItems = () => {
-  const res = axios.get("http://localhost:3333/posts");
-  return res
+export const fetchItems = async () => {
+  const { data } = await axios.get("http://localhost:3333/posts");
+  console.log(data)
+  return data
 };

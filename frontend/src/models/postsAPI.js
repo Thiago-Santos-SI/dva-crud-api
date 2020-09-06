@@ -1,12 +1,12 @@
-import { createItem } from "../services/apiPosts";
+import { createItem, fetchItems } from "../services/apiPosts";
 import pathToRegExp from 'path-to-regexp';
-import {fetchItems} from "../services/api";
+import {routerRedux} from "dva/router";
 
 export default {
   namespace: "postsAPI",
 
   state: {
-    itemsState:[],
+    items:[],
     logging: false
   },
 
@@ -15,7 +15,7 @@ export default {
     //PAYLOAD É OQ VALOR Q EU RECEBO. (ID, TEXT, ETC)
     saveItems(state, { payload }) {
       //COPIO TUDO QUE TEM EM STATE E SOBREPONHO EM ITEMS[]: PAYLOAD ( QUE SOBREPOE O VALUE)
-      return { ...state, itemsState: payload, logging: true };
+      return { ...state, items: payload, logging: true };
     },
 
     //o saveItems pega todos os items da api salva no estado de items[]. ele é chamado pelo getitems
@@ -23,15 +23,15 @@ export default {
     createPost(state, { payload: { title, body } }){
       //Since fake api returns the id as 101 always
       const item = {
-        id: state.itemsState.length + 1,
+        id: state.items.length + 1,
         title,
         body
       };
 
-      const newStateItems = [...state.itemsState];
-      newStateItems[state.itemsState.length] = item;
+      const newStateItems = [...state.items];
+      newStateItems[state.items.length] = item;
       console.log(newStateItems);
-      return {...state, itemsState: newStateItems};
+      return {...state, items: newStateItems};
     },
 
   },
@@ -46,6 +46,8 @@ export default {
             payload: data
           });
         }
+        yield put(routerRedux.push('/'));
+
       }catch (e){
         console.log(e)
       }
@@ -53,20 +55,23 @@ export default {
 
     *getItems(action, { call, put }) {
       const items = yield call(fetchItems);
+      console.log(items)
       yield put({
         type: "saveItems",
-        payload: items.data
+        payload: items
       });
     },
+
 
   },
 
   //every time it visits executions starts from history.listem acting as listener function.
+  //Alteração do histórico de inscrição (url), aciona a ação `load` se o nome do caminho for` / `
   subscriptions: {
     setup: function ({ history, dispatch }) {
       let locate = false;
       history.listen(location => {
-        if (pathToRegExp('/').exec(location.pathname)) {
+        if (pathToRegExp('/posts').exec(location.pathname)) {
           if(!locate){
             dispatch({
               type: 'getItems',

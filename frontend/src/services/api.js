@@ -4,6 +4,11 @@ export const fetchItems = () => {
   return axios.get("https://jsonplaceholder.typicode.com/posts");
 };
 
+export const fetchItemsAPI = async () => {
+  const { data } = await axios.get("http://localhost:3333/posts");
+  return data
+};
+
 export const deleteItem = () =>{
   //console.log('reached');
   return axios.delete("https://jsonplaceholder.typicode.com/posts/1");
