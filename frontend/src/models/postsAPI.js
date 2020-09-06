@@ -1,4 +1,4 @@
-import { createItem, fetchItems } from "../services/apiPosts";
+import { createItem, fetchItems, deleteItem } from "../services/apiPosts";
 import pathToRegExp from 'path-to-regexp';
 import {routerRedux} from "dva/router";
 
@@ -34,6 +34,13 @@ export default {
       return {...state, items: newStateItems};
     },
 
+    delItem(state, { payload: id  }) {
+      const previousState = state.items;
+      deleteItem(id)
+      const newState = previousState.filter(item => item.id !== id);
+      return {...state, items: newState };
+
+    },
   },
 
   effects: {
@@ -46,7 +53,7 @@ export default {
             payload: data
           });
         }
-        yield put(routerRedux.push('/'));
+        //yield put(routerRedux.push('/'));
 
       }catch (e){
         console.log(e)
@@ -55,14 +62,18 @@ export default {
 
     *getItems(action, { call, put }) {
       const items = yield call(fetchItems);
-      console.log(items)
       yield put({
         type: "saveItems",
         payload: items
       });
     },
 
-
+    *deleteItem({ payload: id }, { call, put }){
+      yield put({
+        type: "delItem",
+        payload: id
+      })
+    },
   },
 
   //every time it visits executions starts from history.listem acting as listener function.
@@ -71,7 +82,7 @@ export default {
     setup: function ({ history, dispatch }) {
       let locate = false;
       history.listen(location => {
-        if (pathToRegExp('/posts').exec(location.pathname)) {
+        if (pathToRegExp('/posts' && '/').exec(location.pathname)) {
           if(!locate){
             dispatch({
               type: 'getItems',

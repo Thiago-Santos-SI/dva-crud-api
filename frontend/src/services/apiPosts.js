@@ -12,3 +12,8 @@ export const fetchItems = async () => {
   console.log(data)
   return data
 };
+
+export const deleteItem = (id) =>{
+  return axios.delete(`http://localhost:3333/posts/${id}`);
+
+}

@@ -14,15 +14,7 @@ class PostController {
     return data
   }
 
-  /**
-   * Render a form to be used for creating a new post.
-   * GET posts/create
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
+
   async store ({ request }) {
     const data = request.only(['title', 'body'])
 
@@ -31,27 +23,28 @@ class PostController {
     return post
   }
 
-  /**
-   * Render a form to update an existing post.
-   * GET posts/:id/edit
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
   async update ({ params, request, response }) {
+    const data = request.only(['title', 'body'])
+
+    const post = await Post.find(params.id)
+
+    post.merge(data)
+
+    await post.save()
+
+    return post
   }
 
-  /**
-   * Delete a post with id.
-   * DELETE posts/:id
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   */
+  async destroyAll ({ params, request, response }) {
+    const post = await Post.all()
+
+    await post.delete()
+  }
+
   async destroy ({ params, request, response }) {
+    const post = await Post.find(params.id)
+
+    await post.delete()
   }
 }
 

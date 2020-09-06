@@ -7,7 +7,11 @@ import {Button,Table} from 'antd';
 class posts extends Component {
 
   handleDelete = (value) => {
-    this.props.dispatch({type:"posts/deleteItem",payload:value});
+    this.props.dispatch({
+      type: "postsAPI/deleteItem",
+      payload: value
+    });
+    console.log(value)
   }
 
   buttonStyle = {
@@ -46,7 +50,7 @@ class posts extends Component {
       title:'Delete',
       key:'delete',
       //Input params are the dataSource
-      render:({id})=>(
+      render:({ id })=>(
         <Button type="danger" onClick={() => this.handleDelete(id)}>Delete</Button>
       )
     }
@@ -56,6 +60,7 @@ class posts extends Component {
     const {getDataState:data} = this.props;
     console.log(data)
     return (
+
       <React.Fragment>
         <h1 style={this.postStyle}>Posts {data.length}</h1>
         <Link to="/createTest">
@@ -79,7 +84,7 @@ const mapStateToProps = state => {
     getDataState: state.postsAPI.items,
 
     getItems: state.posts.getItems,
-    deleteItem: state.posts.deleteItem,
+    deleteItem: state.postsAPI.deleteItem,
     loggingState:state.posts.logging
 
   };

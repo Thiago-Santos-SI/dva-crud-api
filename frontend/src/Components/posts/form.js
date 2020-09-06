@@ -2,6 +2,7 @@ import React from "react";
 import "antd/dist/antd.css";
 import { Form, Input, Button } from "antd";
 import { connect } from "dva";
+import './index.css'
 
 class RegistrationPostForm extends React.Component {
 
@@ -9,7 +10,6 @@ class RegistrationPostForm extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-
     this.props.form.validateFieldsAndScroll(( err, values ) => {
       if (!err) {
         //console.log("Received values of form: ", values);
@@ -25,12 +25,11 @@ class RegistrationPostForm extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
+
     const formItemLayout = {
       labelCol: {
         xs: { span: 20 },
-        sm: { span: 4
-
-        }
+        sm: { span: 4 }
       },
       wrapperCol: {
         xs: { span: 24 },
@@ -51,8 +50,11 @@ class RegistrationPostForm extends React.Component {
     };
 
     return (
-      <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-        <Form.Item label="Title">
+      <div>
+      <Form {...formItemLayout}
+            name="normal_login"
+            onSubmit={this.handleSubmit}>
+        <Form.Item label="Title  ">
           {getFieldDecorator("title", {
             rules: [
               {
@@ -62,7 +64,7 @@ class RegistrationPostForm extends React.Component {
             ]
           })(<Input />)}
         </Form.Item>
-        <Form.Item label="body">
+        <Form.Item label="body ">
           {getFieldDecorator("body", {
             rules: [
               {
@@ -82,6 +84,7 @@ class RegistrationPostForm extends React.Component {
 
         </Form.Item>
       </Form>
+      </div>
     );
   }
 }

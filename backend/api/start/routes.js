@@ -10,3 +10,5 @@ Route.get('/', () => {
 
 Route.post('posts', 'PostController.store')
 Route.get('posts', 'PostController.index')
+Route.delete('posts/:id', 'PostController.destroy')
+Route.delete('posts', 'PostController.destroyAll')

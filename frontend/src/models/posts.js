@@ -113,7 +113,7 @@ export default {
   },
 
   //every time it visits executions starts from history.listem acting as listener function.
-
+  //https://github.com/dvajs/dva-knowledgemap/blob/master/README_en.md#subscription
   //Alteração do histórico de inscrição (url), aciona a ação `load` se o nome do caminho for` / `
   subscriptions: {
     setup: function ({ history, dispatch }) {
